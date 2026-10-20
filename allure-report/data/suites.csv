@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3971","Button Test","","2026-10-18","passed","2026-10-18","","button.spec.js","",""
+"","5025","Checkbox Test","","2026-10-18","passed","2026-10-18","","checkbox.spec.js","",""
+"","4984","Fill login form","","2026-10-18","passed","2026-10-18","","form.spec.js","",""
+"","5329","Movie Name Input Test","","2026-10-18","passed","2026-10-18","","inputpage.spec.js","",""
+"","4243","Close info dialog","","2026-10-18","passed","2026-10-18","","alerts.spec.js","",""
+"","3696","Select fruit","","2026-10-18","passed","2026-10-18","","dropdown.spec.js","",""
+"","4731","Login Form Test","","2026-10-18","passed","2026-10-18","","loginpage.spec.js","",""
