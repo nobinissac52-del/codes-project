@@ -1,12 +1,37 @@
 
-const { test, expect } = require("@playwright/test");
-const ButtonPage = require("../pageobjects/ButtonPage");
+const { test, expect } = require('@playwright/test');
+const ButtonsPage = require('../pageobjects/ButtonPage');
 
-test("Button Test", async ({ page }) => {
-    const buttonPage = new ButtonPage(page);
+test('Buttons Page Test', async ({ page }) => {
+    const buttons = new ButtonsPage(page);
 
-    await buttonPage.openPage();
-    await buttonPage.clickButton();
+    await buttons.goto();
 
-    await expect(buttonPage.button).toBeVisible();
+    // Single click
+    await expect(buttons.home).toBeVisible();
+    await buttons.home.click();
+
+    // Find location
+    await buttons.location.click();
+
+    // Find color
+    await buttons.color.click();
+
+    // Find size
+    await buttons.size.click();
+
+    // Check disabled button
+    await expect(buttons.disabled).toBeDisabled();
+
+    // Click and hold
+    await buttons.hold.hover();
+    await page.mouse.down();
+    await page.waitForTimeout(1500);
+    await page.mouse.up();
+
+    // Double click
+    await buttons.doubleClick.dblclick();
+
+    // Right click
+    await buttons.rightClick.click({ button: 'right' });
 });

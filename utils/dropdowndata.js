@@ -1,8 +1,13 @@
 
-function getData() {
+function getDropdownData() {
     return {
-        fruit: 'apple'
+        fruit: "Apple",
+        country: "india",
+        heroes: ["batman", "aquaman"],
+        priority: "High Priority",
+        citySearch: "Pun",
+        city: "Pune"
     };
 }
 
-module.exports = { getData };
+module.exports = { getDropdownData };

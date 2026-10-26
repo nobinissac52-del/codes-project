@@ -1,18 +1,19 @@
 const { test, expect } = require("@playwright/test");
-const LoginPage = require("../pageobjects/loginpage");
+const LoginPage = require("../pageobjects/Loginpage.js");
 const { getLoginData } = require("../utils/login.js");
 
-test("Login Form Test", async ({ page }) => {
+test("Valid Login", async ({ page }) => {
+    const login = new LoginPage(page);
+    const data = getLoginData();
 
-    const loginPage = new LoginPage(page);
+    await login.goto();
+    await login.login(data.validEmail, data.validPassword);
+});
 
-    const loginData = getLoginData();
+test("Invalid Login", async ({ page }) => {
+    const login = new LoginPage(page);
+    const data = getLoginData();
 
-    await loginPage.goto();
-
-    await loginPage.login(
-        loginData.email,
-        loginData.password
-    );
-
+    await login.goto();
+    await login.login(data.invalidEmail, data.invalidPassword);
 });
